@@ -1,0 +1,24 @@
+# Domains
+example.com
+example.com/
+example.com/abc
+
+# Subdomains
+www.example.com
+www.example.com/
+www.example.com/abc
+
+# Protocols
+http://example.com
+http://example.com/
+http://example.com/abc
+
+# Protocols with subdomain
+https://test.example.com
+https://test.example.com/
+https://test.example.com/abc
+
+
+# Code - Not to be changed
+example.command
+this.is.example.command
