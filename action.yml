@@ -1,0 +1,34 @@
+name: "Find and Replace links"
+description: "Replace web link with the another one"
+inputs:
+  find:
+    description: "link to be replaced"
+    required: true
+  replace:
+    description: "Final link"
+    required: false
+    default: ""
+    
+
+runs:
+  using: "composite"
+  steps:
+    - name: "Escaped text in find"
+      uses: thenbdev/escape-string@main
+      id: escape-string-find
+      with:
+        text: ${{ inputs.find }}
+
+    - name: "Escaped text in replace"
+      uses: thenbdev/escape-string@main
+      id: escape-string-replace
+      with:
+        text: ${{ inputs.replace }}
+
+    - name: Replace link with '/'
+      uses: thenbdev/find-and-replace@main
+      with:
+        find: */${{ steps.escape-string-find.outputs.text }}/*
+        replace: */${{ steps.escape-string-replace.outputs.text }}/*
+        regex-in-find: true
+        regex-in-replace: true
