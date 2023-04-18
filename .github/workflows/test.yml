@@ -23,7 +23,11 @@ jobs:
       - name: Check if links are correctly replaced
         run: |
           cat test/test-file.txt
-          git add test/test-file.txt
-          git diff --exit-code test/test-file.txt test-answers.txt
-      
+          if diff test/test-file.txt test-answers.txt; then
+            echo "Files are identical"
+          else
+            echo "Files are different"
+            exit 1
+          fi
+
       # Todo: add structure to test and fail the test
