@@ -45,8 +45,8 @@ runs:
     - name: Link starts with /
       uses: thenbdev/find-and-replace@main
       with:
-        find: "\/${{ steps.escape-string-find.outputs.text }}"
-        replace: "${{ steps.escape-string-replace.outputs.text }}"
+        find: \/${{ steps.escape-string-find.outputs.text }}
+        replace: ${{ steps.escape-string-replace.outputs.text }}
         regex-in-find: true
         regex-in-replace: true
 
@@ -56,8 +56,8 @@ runs:
     - name: Link with '/' in the end.
       uses: thenbdev/find-and-replace@main
       with:
-        find: "${{ steps.escape-string-find.outputs.text }}\/"
-        replace: "${{ steps.escape-string-replace.outputs.text }}\/"
+        find: ${{ steps.escape-string-find.outputs.text }}\/
+        replace: ${{ steps.escape-string-replace.outputs.text }}\/
         regex-in-find: true
         regex-in-replace: true
     
