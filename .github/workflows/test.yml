@@ -13,7 +13,7 @@ jobs:
         uses: thenbdev/find-and-replace-links@main
         with: 
           find: example.com
-          replace: example1.com
+          replace: example1.in
 
       - name: Restore the answers
         run: |
