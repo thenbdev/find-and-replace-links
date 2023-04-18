@@ -59,7 +59,7 @@ runs:
       uses: thenbdev/find-and-replace@main
       with:
         find: "www.${{ inputs.find }}"
-        replace: "${{ inputs.replace }}"
+        replace: "www.${{ inputs.replace }}"
         words_only: true
 
     - name: "Debug - 4"
