@@ -19,25 +19,11 @@ runs:
       with:
         text: ${{ inputs.find }}
 
-    - name: "Debug - 1"
-      shell: bash
-      run: |
-        echo "Debug logging here"
-        git diff test/test-file.txt
-        echo "Debug done"
-
     - name: "Escaped text in replace"
       uses: thenbdev/escape-string@main
       id: escape-string-replace
       with:
         text: ${{ inputs.replace }}
-
-    - name: "Debug - 2"
-      shell: bash
-      run: |
-        echo "Debug logging here"
-        git diff test/test-file.txt
-        echo "Debug done"
 
     # example.com
     - name: Just link
@@ -47,13 +33,6 @@ runs:
         replace: "${{ inputs.replace }}"
         words_only: true
 
-    - name: "Debug - 3"
-      shell: bash
-      run: |
-        echo "Debug logging here"
-        git diff test/test-file.txt
-        echo "Debug done"
-
     # www.example.com
     - name: Link starts with www
       uses: thenbdev/find-and-replace@main
@@ -61,13 +40,6 @@ runs:
         find: "www.${{ inputs.find }}"
         replace: "www.${{ inputs.replace }}"
         words_only: true
-
-    - name: "Debug - 4"
-      shell: bash
-      run: |
-        echo "Debug logging here"
-        git diff test/test-file.txt
-        echo "Debug done"
 
     # (http:// or https://) example.com
     - name: Link starts with /
@@ -89,13 +61,6 @@ runs:
         regex-in-find: true
         regex-in-replace: true
 
-    - name: "Debug - 5"
-      shell: bash
-      run: |
-        echo "Debug logging here"
-        git diff test/test-file.txt
-        echo "Debug done"
-
     # example.com?query=value
     - name: Link with query parameters
       uses: thenbdev/find-and-replace@main
@@ -104,13 +69,6 @@ runs:
         replace: "${{ steps.escape-string-replace.outputs.text }}?"
         regex-in-find: true
         regex-in-replace: true
-    
-    - name: "Debug - 6"
-      shell: bash
-      run: |
-        echo "Debug logging here"
-        git diff test/test-file.txt
-        echo "Debug done"
 
     # example.com#anchor_text
     - name: Link with anchors (fragment identifiers)
@@ -120,11 +78,4 @@ runs:
         replace: "${{ steps.escape-string-replace.outputs.text }}#"
         regex-in-find: true
         regex-in-replace: true
-
-    - name: "Debug - 7"
-      shell: bash
-      run: |
-        echo "Debug logging here"
-        git diff test/test-file.txt
-        echo "Debug done"
 
