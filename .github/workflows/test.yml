@@ -8,30 +8,18 @@ jobs:
     steps:
       - name: Checkout customisations
         uses: actions/checkout@v3
-      
-      - name: Change to test
-        run: cd test
 
-      - name: Check which repo is the workflow currently in
-        run: |
-          pwd
-          ls
-
-      - id: t1
+      - id: Test
         uses: thenbdev/find-and-replace-links@main
         with: 
           find: example.com
           replace: example1.com
-      - id: t2
-        uses: thenbdev/find-and-replace-links@main
-        with:
-          find: www.example.com
-          replace: www.example.com
 
-      - id: t3
-        uses: thenbdev/find-and-replace-links@main
-        with:
-          find: www.example.com
-          replace: www.example.com
-
+      - name: Check if links are correctly replaced
+        run: |
+          git status
+          git checkout HEAD -- test-answers.txt
+          git status
+          git diff --exit-code test/test-file.txt test-answers.txt
+      
       # Todo: add structure to test and fail the test
