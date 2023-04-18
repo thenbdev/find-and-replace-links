@@ -52,6 +52,9 @@ Protocols with subdomain, query parameters and anchor
 https://test.example1.in?query=value#anchor
 https://test.example1.in/abc?query=value#anchor
 
+# CAPITAL links
+example1.in
+
 # Code - Not to be changed
 example.command
 this.is.example.command
