@@ -17,3 +17,8 @@ http://example.com/abc
 https://test.example.com
 https://test.example.com/
 https://test.example.com/abc
+
+
+# Code - Not to be changed
+example.command
+this.is.example.command
