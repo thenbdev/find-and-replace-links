@@ -1,5 +1,7 @@
 name: Test web link replacement
-
+on: 
+  push:
+    branches: [develop]
 jobs:
   test_web_link_replacement:
     runs-on: ubuntu-latest
@@ -26,7 +28,7 @@ jobs:
           find: www.example.com
           replace: www.example.com
 
-      - id: t2
+      - id: t3
         uses: thenbdev/find-and-replace-links@main
         with:
           find: www.example.com
