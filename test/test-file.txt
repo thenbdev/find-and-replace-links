@@ -7,6 +7,7 @@ example.com/abc
 www.example.com
 www.example.com/
 www.example.com/abc
+abc.xyz.example.com/
 
 # Protocols
 http://example.com
@@ -19,6 +20,43 @@ https://test.example.com/
 https://test.example.com/abc
 
 
+# Domains with query parameters
+example.com?query=value
+example.com/abc?query=value
+
+# Domains with query parameters and anchor
+example.com?query=value#anchor
+example.com/abc?query=value#anchor
+
+# Subdomains with query parameters
+www.example.com?query=value
+www.example.com/abc?query=value
+
+# Subdomains with query parameters and anchor
+www.example.com?query=value#anchor
+www.example.com/abc?query=value#anchor
+
+Protocols with query parameters
+http://example.com?query=value
+http://example.com/abc?query=value
+
+Protocols with query parameters and anchor
+http://example.com?query=value#anchor
+http://example.com/abc?query=value#anchor
+
+Protocols with subdomain and query parameters
+https://test.example.com?query=value
+https://test.example.com/abc?query=value
+
+Protocols with subdomain, query parameters and anchor
+https://test.example.com?query=value#anchor
+https://test.example.com/abc?query=value#anchor
+
 # Code - Not to be changed
 example.command
 this.is.example.command
+another.example.command
+
+
+# EoF test
+example.com

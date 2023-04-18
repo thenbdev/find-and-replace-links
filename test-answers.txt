@@ -1,24 +1,62 @@
 # Domains
-example.com
-example.com/
-example.com/abc
+example1.com
+example1.com/
+example1.com/abc
 
 # Subdomains
-www.example.com
-www.example.com/
-www.example.com/abc
+www.example1.com
+www.example1.com/
+www.example1.com/abc
+abc.xyz.example1.com/
 
 # Protocols
-http://example.com
-http://example.com/
-http://example.com/abc
+http://example1.com
+http://example1.com/
+http://example1.com/abc
 
 # Protocols with subdomain
-https://test.example.com
-https://test.example.com/
-https://test.example.com/abc
+https://test.example1.com
+https://test.example1.com/
+https://test.example1.com/abc
 
+
+# Domains with query parameters
+example1.com?query=value
+example1.com/abc?query=value
+
+# Domains with query parameters and anchor
+example1.com?query=value#anchor
+example1.com/abc?query=value#anchor
+
+# Subdomains with query parameters
+www.example1.com?query=value
+www.example1.com/abc?query=value
+
+# Subdomains with query parameters and anchor
+www.example1.com?query=value#anchor
+www.example1.com/abc?query=value#anchor
+
+Protocols with query parameters
+http://example1.com?query=value
+http://example1.com/abc?query=value
+
+Protocols with query parameters and anchor
+http://example1.com?query=value#anchor
+http://example1.com/abc?query=value#anchor
+
+Protocols with subdomain and query parameters
+https://test.example1.com?query=value
+https://test.example1.com/abc?query=value
+
+Protocols with subdomain, query parameters and anchor
+https://test.example1.com?query=value#anchor
+https://test.example1.com/abc?query=value#anchor
 
 # Code - Not to be changed
 example.command
 this.is.example.command
+another.example.command
+
+
+# EoF test
+example1.com
