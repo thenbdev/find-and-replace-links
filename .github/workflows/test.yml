@@ -1,7 +1,7 @@
 name: Test web link replacement
 on: 
   push:
-    branches: [develop]
+    branches: [main]
 jobs:
   test_web_link_replacement:
     runs-on: ubuntu-latest
