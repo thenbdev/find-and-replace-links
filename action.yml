@@ -74,7 +74,7 @@ runs:
       uses: thenbdev/find-and-replace@main
       with:
         find: \/${{ steps.escape-string-find.outputs.text }}
-        replace: ${{ steps.escape-string-replace.outputs.text }}
+        replace: /${{ steps.escape-string-replace.outputs.text }}
         regex-in-find: true
         regex-in-replace: true
 
