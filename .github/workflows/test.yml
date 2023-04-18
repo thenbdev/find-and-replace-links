@@ -23,6 +23,7 @@ jobs:
       - name: Check if links are correctly replaced
         run: |
           cat test/test-file.txt
+          git add test/test-file.txt
           git diff --exit-code test/test-file.txt test-answers.txt
       
       # Todo: add structure to test and fail the test
