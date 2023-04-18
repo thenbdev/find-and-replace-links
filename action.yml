@@ -25,10 +25,56 @@ runs:
       with:
         text: ${{ inputs.replace }}
 
-    - name: Replace link with '/'
+    # example.com
+    - name: Just link
       uses: thenbdev/find-and-replace@main
       with:
-        find: "*/${{ steps.escape-string-find.outputs.text }}/*"
-        replace: "*/${{ steps.escape-string-replace.outputs.text }}/*"
+        find: "${{ inputs.find }}"
+        replace: "${{ inputs.replace }}"
+        words_only: true
+
+    # www.example.com
+    - name: Link starts with www
+      uses: thenbdev/find-and-replace@main
+      with:
+        find: "www.${{ inputs.find }}"
+        replace: "${{ inputs.replace }}"
+        words_only: true
+
+    # (http:// or https://) example.com
+    - name: Link starts with /
+      uses: thenbdev/find-and-replace@main
+      with:
+        find: "\/${{ steps.escape-string-find.outputs.text }}"
+        replace: "${{ steps.escape-string-replace.outputs.text }}"
+        regex-in-find: true
+        regex-in-replace: true
+
+    # abc.example.xyz - This could be a package/library as well, not replacing
+
+    # www.example.com/abc
+    - name: Link with '/' in the end.
+      uses: thenbdev/find-and-replace@main
+      with:
+        find: "${{ steps.escape-string-find.outputs.text }}\/"
+        replace: "${{ steps.escape-string-replace.outputs.text }}\/"
+        regex-in-find: true
+        regex-in-replace: true
+    
+    # example.com?query=value
+    - name: Link with query parameters
+      uses: thenbdev/find-and-replace@main
+      with:
+        find: "${{ steps.escape-string-find.outputs.text }}?"
+        replace: "${{ steps.escape-string-replace.outputs.text }}?"
+        regex-in-find: true
+        regex-in-replace: true
+    
+    # example.com#anchor_text
+    - name: Link with anchors (fragment identifiers)
+      uses: thenbdev/find-and-replace@main
+      with:
+        find: "${{ steps.escape-string-find.outputs.text }}#"
+        replace: "${{ steps.escape-string-replace.outputs.text }}#"
         regex-in-find: true
         regex-in-replace: true
