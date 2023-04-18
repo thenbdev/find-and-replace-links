@@ -19,7 +19,7 @@ runs:
       with:
         text: ${{ inputs.find }}
 
-    - name: "Debug"
+    - name: "Debug - 1"
       shell: bash
       run: |
         echo "Debug logging here"
@@ -32,7 +32,7 @@ runs:
       with:
         text: ${{ inputs.replace }}
 
-    - name: "Debug"
+    - name: "Debug - 2"
       shell: bash
       run: |
         echo "Debug logging here"
@@ -47,7 +47,7 @@ runs:
         replace: "${{ inputs.replace }}"
         words_only: true
 
-    - name: "Debug"
+    - name: "Debug - 3"
       shell: bash
       run: |
         echo "Debug logging here"
@@ -62,7 +62,7 @@ runs:
         replace: "${{ inputs.replace }}"
         words_only: true
 
-    - name: "Debug"
+    - name: "Debug - 4"
       shell: bash
       run: |
         echo "Debug logging here"
@@ -89,7 +89,7 @@ runs:
         regex-in-find: true
         regex-in-replace: true
 
-    - name: "Debug"
+    - name: "Debug - 5"
       shell: bash
       run: |
         echo "Debug logging here"
@@ -105,7 +105,7 @@ runs:
         regex-in-find: true
         regex-in-replace: true
     
-    - name: "Debug"
+    - name: "Debug - 6"
       shell: bash
       run: |
         echo "Debug logging here"
@@ -121,7 +121,7 @@ runs:
         regex-in-find: true
         regex-in-replace: true
 
-    - name: "Debug"
+    - name: "Debug - 7"
       shell: bash
       run: |
         echo "Debug logging here"
