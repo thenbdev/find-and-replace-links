@@ -22,7 +22,6 @@ jobs:
           git status
       - name: Check if links are correctly replaced
         run: |
-          cat test/test-file.txt
           if diff test/test-file.txt test-answers.txt; then
             echo "Files are identical"
           else
