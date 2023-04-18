@@ -73,7 +73,7 @@ runs:
     - name: Link starts with /
       uses: thenbdev/find-and-replace@main
       with:
-        find: \/\([^[:space:].]*\)${{ steps.escape-string-find.outputs.text }}
+        find: \/\([^[:space:]]*\)${{ steps.escape-string-find.outputs.text }}
         replace: \/\1${{ steps.escape-string-replace.outputs.text }}
         regex-in-find: true
         regex-in-replace: true
