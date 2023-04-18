@@ -19,11 +19,23 @@ runs:
       with:
         text: ${{ inputs.find }}
 
+    - name: "Debug"
+      run: |
+        echo "Debug logging here"
+        git diff test/test-file.txt
+        echo "Debug done"
+
     - name: "Escaped text in replace"
       uses: thenbdev/escape-string@main
       id: escape-string-replace
       with:
         text: ${{ inputs.replace }}
+
+    - name: "Debug"
+      run: |
+        echo "Debug logging here"
+        git diff test/test-file.txt
+        echo "Debug done"
 
     # example.com
     - name: Just link
@@ -33,6 +45,12 @@ runs:
         replace: "${{ inputs.replace }}"
         words_only: true
 
+    - name: "Debug"
+      run: |
+        echo "Debug logging here"
+        git diff test/test-file.txt
+        echo "Debug done"
+
     # www.example.com
     - name: Link starts with www
       uses: thenbdev/find-and-replace@main
@@ -40,6 +58,12 @@ runs:
         find: "www.${{ inputs.find }}"
         replace: "${{ inputs.replace }}"
         words_only: true
+
+    - name: "Debug"
+      run: |
+        echo "Debug logging here"
+        git diff test/test-file.txt
+        echo "Debug done"
 
     # (http:// or https://) example.com
     - name: Link starts with /
@@ -60,7 +84,13 @@ runs:
         replace: ${{ steps.escape-string-replace.outputs.text }}\/
         regex-in-find: true
         regex-in-replace: true
-    
+
+    - name: "Debug"
+      run: |
+        echo "Debug logging here"
+        git diff test/test-file.txt
+        echo "Debug done"
+
     # example.com?query=value
     - name: Link with query parameters
       uses: thenbdev/find-and-replace@main
@@ -70,6 +100,12 @@ runs:
         regex-in-find: true
         regex-in-replace: true
     
+    - name: "Debug"
+      run: |
+        echo "Debug logging here"
+        git diff test/test-file.txt
+        echo "Debug done"
+
     # example.com#anchor_text
     - name: Link with anchors (fragment identifiers)
       uses: thenbdev/find-and-replace@main
@@ -78,3 +114,10 @@ runs:
         replace: "${{ steps.escape-string-replace.outputs.text }}#"
         regex-in-find: true
         regex-in-replace: true
+
+    - name: "Debug"
+      run: |
+        echo "Debug logging here"
+        git diff test/test-file.txt
+        echo "Debug done"
+
