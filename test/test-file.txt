@@ -55,6 +55,11 @@ https://test.example.com/abc?query=value#anchor
 # CAPITAL links
 EXAMPLE.COM
 
+# In a sentence
+Welcome here to example.com
+example.com is an amazing site
+we enjoying being in example.com and learning stuff
+
 # Code - Not to be changed
 example.command
 this.is.example.command
